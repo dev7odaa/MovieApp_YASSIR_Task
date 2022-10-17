@@ -3,7 +3,7 @@
 
     <data>
     <variable
-        name="movieListViewModel"
+        name="movieDetail"
         type="com.example.movieapp_yassir_task.ui.screens.detailScreen.MovieDeatilsFragment"/>
     </data>
 
