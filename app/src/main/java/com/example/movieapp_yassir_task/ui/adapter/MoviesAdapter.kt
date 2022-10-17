@@ -35,7 +35,7 @@ class MoviesAdapter(var movieList: MutableList<Result>, val itemClick: OnItemCli
         holder.itemView.setOnClickListener {
             var title = movieList[position].title.toString()
             var year = movieList[position].releaseDate.toString()
-            var description = movieList[position].releaseDate.toString()
+            var description = movieList[position].description.toString()
             var img_movie = Constants.IMAGE_BASE_URL+movieList[position].image.toString()
 
             itemClick.onItemClicked(img_movie, title, year, description)
