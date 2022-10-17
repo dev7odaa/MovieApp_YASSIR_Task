@@ -11,25 +11,18 @@
         android:label="fragment_movie_list"
         tools:layout="@layout/fragment_movie_list" >
         <action
-            android:id="@+id/action_movieList_to_detailMovieFragment"
-            app:destination="@id/detailMovieFragment" />
+            android:id="@+id/action_movieList_to_movieDeatilsFragment"
+            app:destination="@id/movieDeatilsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/detailMovieFragment"
-        android:name="com.example.movieapp_yassir_task.ui.screens.detailScreen.DetailMovieFragment"
-        android:label="fragment_detail_movie"
-        tools:layout="@layout/fragment_detail_movie" >
+        android:id="@+id/movieDeatilsFragment"
+        android:name="com.example.movieapp_yassir_task.ui.screens.detailScreen.MovieDeatilsFragment"
+        android:label="MovieDeatilsFragment" >
         <argument
             android:name="img_movie"
             app:argType="string" />
         <argument
             android:name="title"
-            app:argType="string" />
-        <argument
-            android:name="year"
-            app:argType="string" />
-        <argument
-            android:name="description"
             app:argType="string" />
     </fragment>
 </navigation>
