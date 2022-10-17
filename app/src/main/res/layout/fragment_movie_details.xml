@@ -2,9 +2,9 @@
 <layout>
 
     <data>
-    <variable
-        name="movieDetail"
-        type="com.example.movieapp_yassir_task.ui.screens.detailScreen.MovieDeatilsFragment"/>
+        <variable
+            name="movieDetail"
+            type="com.example.movieapp_yassir_task.ui.screens.detailScreen.MovieDeatilsFragment"/>
     </data>
 
     <LinearLayout

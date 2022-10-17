@@ -15,7 +15,7 @@ import com.example.movieapp_yassir_task.ui.screens.mainScreen.MovieListFragment
 import com.example.movieapp_yassir_task.utils.Constants
 import okhttp3.HttpUrl
 
-class MoviesAdapter(var movieList: MutableList<Result>):
+class MoviesAdapter(var movieList: MutableList<Result>, val itemClick: OnItemClick):
     RecyclerView.Adapter<MoviesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -38,7 +38,7 @@ class MoviesAdapter(var movieList: MutableList<Result>):
             var description = movieList[position].releaseDate.toString()
             var img_movie = Constants.IMAGE_BASE_URL+movieList[position].image.toString()
 
-            //itemClick.onItemClicked(img_movie, title, year, description)
+            itemClick.onItemClicked(img_movie, title, year, description)
         }
     }
 

@@ -1,6 +1,6 @@
 package com.example.movieapp_yassir_task.ui.screens.mainScreen
 
-
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,12 +19,13 @@ import com.example.movieapp_yassir_task.data.model.PopularMovies
 import com.example.movieapp_yassir_task.data.model.Result
 import com.example.movieapp_yassir_task.databinding.FragmentMovieListBinding
 import com.example.movieapp_yassir_task.ui.adapter.MoviesAdapter
+import kotlinx.android.synthetic.main.movie_items.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MovieListFragment: Fragment(){
+class MovieListFragment: Fragment(), MoviesAdapter.OnItemClick{
 
     lateinit var _viewModel: MovieListFragmentViewModel
 
@@ -51,7 +52,7 @@ class MovieListFragment: Fragment(){
     }
 
     private fun initList() {
-        moviesAdapter = MoviesAdapter(mutableListOf())
+        moviesAdapter = MoviesAdapter(mutableListOf(), this)
         recyclerview.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = moviesAdapter
@@ -73,15 +74,15 @@ class MovieListFragment: Fragment(){
         }
     }
 
-    /*override fun onItemClicked(
+    override fun onItemClicked(
         img_movie: String,
         title: String,
         year: String,
         description: String
     ) {
 
-        val action = MovieListFragmentDirections.actionMovieListToDetailMovieFragment(img_movie , title, year, description)
-        Navigation.findNavController(requireView()!!).navigate(action)
+        val action = MovieListFragmentDirections.actionMovieListToMovieDeatilsFragment(img_movie , title, year, description)
+        Navigation.findNavController(requireView()).navigate(action)
 
-    }*/
+    }
 }
