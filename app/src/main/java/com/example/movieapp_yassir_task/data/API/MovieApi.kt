@@ -10,9 +10,4 @@ interface MovieApi {
     @GET("/3/movie/popular?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3")
     suspend fun getPopularMovies(): PopularMovies
 
-    /*
-    @GET("/3/movie/{id}?api_key=c9856d0cb57c3f14bf75bdc6c063b8f3&append_to_response=credits")
-    suspend fun getMovieDetail(@Path("id") id: Int): MutableList<PopularMovies>
-    */
-
 }
